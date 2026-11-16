@@ -8,6 +8,7 @@
 |---|---|---|
 | academic-paper-writing | 学术论文写作 | 在研究结果完成后，组织、撰写、润色、审查和准备投稿 |
 | project-development-expert | 项目开发专家 | 负责软件项目、AI 工具和 Agent Skill 的开发、测试、进度、目标变更与任务交接 |
+| quantitative-analysis-expert | 量化分析专家 | 量化研究、金融数据分析、策略设计、回测验证与 TradingView Pine Script v6 |
 | learning-router | 学习总调度 | 判断学习目的并选择合适的教学模式 |
 | concept-explainer | 概念讲解 | 用简短、准确的方式解释概念 |
 | exam-prep | 应试备考 | 考点梳理、答题方法、练习与错题复盘 |
@@ -36,6 +37,17 @@
           PROJECT_STATUS.md
           HANDOFF.md
           CHANGE_REQUEST.md
+      quantitative-analysis-expert/
+        SKILL.md
+        references/
+          quant-research-workflow.md
+          backtesting-risk-standards.md
+          tradingview-pine-v6.md
+        templates/
+          strategy-research-brief.md
+          backtest-report.md
+        tests/
+          acceptance-scenarios.md
       learning-router/
         SKILL.md
       concept-explainer/
@@ -61,7 +73,7 @@
 2. 仓库 URL 填写 asdffgdghdfh-art/li-ai-skills。
 3. 分支填写 main。
 4. 如果界面提供「技能路径」字段，填写 skills；如果没有该字段，留空并重新读取仓库。
-5. 在「发现」页面刷新仓库，应该能看到 8 个技能。
+5. 在「发现」页面刷新仓库，应该能看到 9 个技能。
 6. 选择要启用的应用，再安装所需技能。建议按实际任务启用，不必让所有技能同时参与每次对话。
 
 ## 学术论文写作技能
@@ -74,7 +86,7 @@
 - 论文写作任务单：skills/academic-paper-writing/templates/paper-writing-brief.md
 - 论断与证据核对表：skills/academic-paper-writing/templates/claim-evidence-matrix.md
 
-该技能不会凭空生成定理、证明、数据或文献；会检查数学条件、公式符号、论断强度和证据一致性。
+该技能不会凭空生成定理、证明、仿真数据或文献；会检查数学条件、公式符号、论断强度和证据一致性。
 
 ## 项目开发专家技能
 
@@ -99,12 +111,27 @@
 
 该 Skill 只提供可复用工作规则，不会自动获得工具、数据库、终端、网络或后台执行能力。跨平台安装和同步状态需要分别验证。
 
+## 量化分析专家技能
+
+量化分析专家负责将交易想法转化为可检验、可复现的研究问题，并评估数据质量、策略逻辑、回测绩效、风险和样本外稳健性。重点支持中国 A 股 ETF 与 TradingView Pine Script v6。
+
+配套资料：
+- 量化研究流程与统计口径：skills/quantitative-analysis-expert/references/quant-research-workflow.md
+- 回测、绩效与风险标准：skills/quantitative-analysis-expert/references/backtesting-risk-standards.md
+- TradingView Pine Script v6 约定：skills/quantitative-analysis-expert/references/tradingview-pine-v6.md
+- 策略研究任务单：skills/quantitative-analysis-expert/templates/strategy-research-brief.md
+- 回测报告模板：skills/quantitative-analysis-expert/templates/backtest-report.md
+- 验收场景：skills/quantitative-analysis-expert/tests/acceptance-scenarios.md
+
+该技能区分描述性统计、关系分析、预测研究、指标开发和交易策略；不编造数据，不把历史回测当作未来保证，并重点检查未来函数、数据泄漏、交易成本、T+1、最大回撤和样本外表现。
+
 ## 使用建议
 
 - 一般学习请求：启用「学习总调度」。
 - 希望不同教学方式可独立调用：按需启用对应的专项学习技能。
 - 论文写作、润色、审稿或投稿：启用「学术论文写作」。
 - 软件项目开发、调试、重构、版本发布准备或 Skill 创建：启用「项目开发专家」。
+- 量化策略研究、金融数据统计、回测审查和 Pine Script v6：启用「量化分析专家」。
 - 同一个任务不需要同时调用所有技能；由当前任务决定最合适的技能。
 
 ## 语言约定
