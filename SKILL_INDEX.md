@@ -19,10 +19,10 @@
 **边界：** 不凭空生成定理、证明、仿真数据、实验结果或参考文献。若研究结果尚未闭合，先列出材料缺口，不将其写成既成成果。
 
 **配套资料：**
-- 30 个提示词模板：\`skills/academic-paper-writing/references/prompt-library.md\`
-- 控制理论论文写作指南：\`skills/academic-paper-writing/references/control-theory-writing-guide.md\`
-- 论文写作任务单：\`skills/academic-paper-writing/templates/paper-writing-brief.md\`
-- 论断与证据核对表：\`skills/academic-paper-writing/templates/claim-evidence-matrix.md\`
+- 30 个提示词模板：skills/academic-paper-writing/references/prompt-library.md
+- 控制理论论文写作指南：skills/academic-paper-writing/references/control-theory-writing-guide.md
+- 论文写作任务单：skills/academic-paper-writing/templates/paper-writing-brief.md
+- 论断与证据核对表：skills/academic-paper-writing/templates/claim-evidence-matrix.md
 
 ## 二、学习专家
 
