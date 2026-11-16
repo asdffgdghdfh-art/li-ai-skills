@@ -6,7 +6,8 @@
 
 | 技能 | 中文名称 | 用途 |
 |---|---|---|
-| academic-paper-writing | 学术论文写作 | 在研究结果完成后，组织、撰写、润色、审查和准备投稿学术论文 |
+| academic-paper-writing | 学术论文写作 | 在研究结果完成后，组织、撰写、润色、审查和准备投稿 |
+| project-development-expert | 项目开发专家 | 负责软件项目、AI 工具和 Agent Skill 的开发、测试、进度、目标变更与任务交接 |
 | learning-router | 学习总调度 | 判断学习目的并选择合适的教学模式 |
 | concept-explainer | 概念讲解 | 用简短、准确的方式解释概念 |
 | exam-prep | 应试备考 | 考点梳理、答题方法、练习与错题复盘 |
@@ -25,6 +26,16 @@
         templates/
           paper-writing-brief.md
           claim-evidence-matrix.md
+      project-development-expert/
+        SKILL.md
+        references/
+          project-lifecycle.md
+          skill-development.md
+          acceptance-tests.md
+        templates/
+          PROJECT_STATUS.md
+          HANDOFF.md
+          CHANGE_REQUEST.md
       learning-router/
         SKILL.md
       concept-explainer/
@@ -50,7 +61,7 @@
 2. 仓库 URL 填写 asdffgdghdfh-art/li-ai-skills。
 3. 分支填写 main。
 4. 如果界面提供「技能路径」字段，填写 skills；如果没有该字段，留空并重新读取仓库。
-5. 在「发现」页面刷新仓库，应该能看到 7 个技能。
+5. 在「发现」页面刷新仓库，应该能看到 8 个技能。
 6. 选择要启用的应用，再安装所需技能。建议按实际任务启用，不必让所有技能同时参与每次对话。
 
 ## 学术论文写作技能
@@ -65,11 +76,35 @@
 
 该技能不会凭空生成定理、证明、数据或文献；会检查数学条件、公式符号、论断强度和证据一致性。
 
+## 项目开发专家技能
+
+项目开发专家负责软件项目、网站、AI Agent、多智能体系统和 Agent Skill 的全生命周期开发。
+
+核心规则：
+- 每次开始前读取项目目标、历史任务、未完成项、代码和最近交接。
+- 新任务只能追加，不能覆盖未完成任务。
+- 项目目标可以根据新需求动态调整，但保留原目标、变更原因和确认记录。
+- 代码完成不等于任务完成；必须按验收标准验证。
+- 切换 Agent 或会话前保存进度、文件、分支、测试和下一步。
+- 以 Notion 项目数据库管理跨会话任务；Git 仓库管理代码和 Skill 源文件。
+- 关键操作、重大目标变更、付费服务、生产部署和合并需要用户审批。
+
+配套资料：
+- 项目生命周期与任务连续性：skills/project-development-expert/references/project-lifecycle.md
+- Skill 开发规范：skills/project-development-expert/references/skill-development.md
+- 验收场景：skills/project-development-expert/references/acceptance-tests.md
+- 项目状态模板：skills/project-development-expert/templates/PROJECT_STATUS.md
+- 交接模板：skills/project-development-expert/templates/HANDOFF.md
+- 目标变更模板：skills/project-development-expert/templates/CHANGE_REQUEST.md
+
+该 Skill 只提供可复用工作规则，不会自动获得工具、数据库、终端、网络或后台执行能力。跨平台安装和同步状态需要分别验证。
+
 ## 使用建议
 
 - 一般学习请求：启用「学习总调度」。
 - 希望不同教学方式可独立调用：按需启用对应的专项学习技能。
 - 论文写作、润色、审稿或投稿：启用「学术论文写作」。
+- 软件项目开发、调试、重构、版本发布准备或 Skill 创建：启用「项目开发专家」。
 - 同一个任务不需要同时调用所有技能；由当前任务决定最合适的技能。
 
 ## 语言约定
